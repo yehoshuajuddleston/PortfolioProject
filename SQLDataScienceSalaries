@@ -1,0 +1,24 @@
+In this SQL code, I'm querying a database that's holding Data Science data to answer questions about various topics. 
+
+#1 What are the salaries of Data Analyst's that are 100% remote?
+SELECT salary
+FROM dbo.ds_salaries
+WHERE job_title = 'Data Analyst'
+AND remote_ratio = '100';
+
+#2 What is the average salary in U.S currency for a Senior Level Data Scientist?
+SELECT AVG(salary_in_usd)
+FROM dbo.ds_salaries
+WHERE job_title = 'Data Scientist' 
+AND experience_level = 'SE'
+
+#3 How many Machine Learning Engineers reside in the United States?
+SELECT COUNT(job_title)
+FROM dbo.ds_salaries
+WHERE job_title = 'ML Engineer'
+AND employee_residence = 'US'
+
+#5 List all salaries from highest to lowest.
+SELECT salary
+FROM dbo.ds_salaries
+ORDER BY salary DESC
