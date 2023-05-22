@@ -1,0 +1,21 @@
+Here I will try to give insights to a dataset of the Top Video Games. 
+
+#1 How would you count the number of times Nintendo has appeared in the dataset?
+SELECT COUNT(Publisher_s)
+FROM videogames
+WHERE Publisher_s = 'Nintendo'
+
+#2 How would you not include Pacman and Minecraft in this list?
+SELECT * 
+FROM videogames
+WHERE Title NOT IN ('Pac-Man', 'Minecraft') 
+
+#3 Can you tell us the games with the most sales to the least?
+SELECT Title
+FROM videogames
+ORDER BY Sales DESC
+
+#4 How would you limit to the top five games?
+SELECT TOP 5 Title 
+FROM videogames
+ORDER BY Sales DESC
